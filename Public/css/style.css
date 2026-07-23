@@ -216,7 +216,7 @@ label {
   margin-bottom: 8px;
 }
 .field { margin: 0; }
-input[type="text"], input[type="email"] {
+input[type="text"], input[type="email"], textarea {
   width: 100%;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
@@ -228,7 +228,8 @@ input[type="text"], input[type="email"] {
   outline: none;
   transition: border-color .15s, box-shadow .15s;
 }
-input[type="text"]:focus, input[type="email"]:focus {
+textarea { resize: vertical; min-height: 120px; line-height: 1.5; }
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
   border-color: var(--cyan-deep);
   box-shadow: 0 0 0 3px oklch(0.55 0.16 200 / 0.25);
 }

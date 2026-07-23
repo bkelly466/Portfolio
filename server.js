@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const { appendContact } = require('./sheets');
 
 const app = express();
 
@@ -20,8 +22,13 @@ app.get('/contact', (req, res) => {
     res.render('contact');
 });
 
-app.post('/thanks', (req, res) => {
-    res.render('thanks', { contact: req.body })
+app.post('/thanks', async (req, res) => {
+    try {
+        await appendContact(req.body);
+    } catch (err) {
+        console.error('Failed to save contact submission:', err.message);
+    }
+    res.render('thanks', { contact: req.body });
 });
 
 app.listen(8080, () => {
