@@ -1,0 +1,35 @@
+version: 2.1
+
+# CircleCI pipeline for the portfolio site.
+# Docs: https://circleci.com/docs/
+#
+# The node orb handles the Node install and dependency caching for us.
+orbs:
+  node: circleci/node@5.2.0
+
+jobs:
+  build-and-test:
+    docker:
+      # Match the Node major version you develop against (Node 22).
+      - image: cimg/node:22.11
+    steps:
+      - checkout
+      # Installs dependencies from package-lock.json (npm ci) and caches them.
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Syntax check
+          # Catches parse errors in the server code without needing a test suite.
+          command: |
+            node --check server.js
+            node --check sheets.js
+      # Once you add a real test suite, replace the placeholder "test" script in
+      # package.json and uncomment the step below to gate merges on it.
+      # - run:
+      #     name: Run tests
+      #     command: npm test
+
+workflows:
+  main:
+    jobs:
+      - build-and-test

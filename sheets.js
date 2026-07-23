@@ -1,8 +1,10 @@
 const path = require('path');
 const { google } = require('googleapis');
 
-// Service-account auth. GOOGLE_CREDENTIALS_PATH points at the JSON key file
-// you download from Google Cloud (defaults to ./credentials.json).
+// Service-account auth from a JSON key file. GOOGLE_CREDENTIALS_PATH points at
+// the key (defaults to ./credentials.json). On Render, add the key as a Secret
+// File named credentials.json — it mounts at the project root, so the default
+// path just works (or point GOOGLE_CREDENTIALS_PATH at /etc/secrets/credentials.json).
 const auth = new google.auth.GoogleAuth({
     keyFile: process.env.GOOGLE_CREDENTIALS_PATH || path.join(__dirname, 'credentials.json'),
     scopes: ['https://www.googleapis.com/auth/spreadsheets'],
