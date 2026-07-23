@@ -1,23 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <title> Brandon's Portfolio </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Brandon's Portfolio</title>
+        <link rel="icon" type="image/png" sizes="32x32" href="/Public/favicon-32.png">
+        <link rel="icon" type="image/png" sizes="64x64" href="/Public/favicon.png">
+        <link rel="apple-touch-icon" href="/Public/favicon.png">
+        <link rel="stylesheet" href="/Public/css/style.css">
     </head>
     <body>
-        <div>
-        I am Brandon, a software engineer and web developer. Welcome to my portfolio website where you can find information about my projects, skills, and experience. Feel free to explore and reach out if you have any questions or opportunities for collaboration.
-        </div>
-        <ul>
-            <li><a href="https://www.kanjutsu.com/" target="_blank">KanJutsu - Japanese Learning App</a></li>
-            <li><a href="https://react100-vstda-mu.vercel.app/" target="_blank">Simple Todo App</a></li>
-            <li><a href="https://react100-change-calculator-teal.vercel.app/" target="_blank">Change Calculator</a></li>
-            <li><a href="https://math-tudor.vercel.app/" target="_blank">Math Tudor</a></li>
-        </ul>
-        <div>
-            <a href="https://github.com/bkelly466" target="_blank">GitHub Profile</a>
-        </div>
-        <div>
-            <a href="/contact">Contact Me</a>
-        </div>
+        <div class="wrap">
+            <header class="site-header">
+                <a href="/" class="bk-logo">BK</a>
+                <nav class="site-nav">
+                    <a href="#projects">Projects</a>
+                    <a href="https://github.com/bkelly466" target="_blank" rel="noopener">GitHub</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </header>
 
+            <section class="hero">
+                <p class="tag">PLAYER 1 &mdash; READY</p>
+                <p>I'm <strong>Brandon</strong>, a software engineer and web developer. Welcome to my portfolio &mdash; here you'll find my projects, skills, and experience. Feel free to explore and reach out about any questions or opportunities to collaborate.</p>
+            </section>
+
+            <h2 class="section-title" id="projects">Select a project</h2>
+            <ul class="projects">
+                <li><a href="https://www.kanjutsu.com/" target="_blank" rel="noopener">KanJutsu &mdash; Japanese Learning App</a></li>
+                <li><a href="https://react100-vstda-mu.vercel.app/" target="_blank" rel="noopener">Simple Todo App</a></li>
+                <li><a href="https://react100-change-calculator-teal.vercel.app/" target="_blank" rel="noopener">Change Calculator</a></li>
+                <li><a href="https://math-tudor.vercel.app/" target="_blank" rel="noopener">Math Tudor</a></li>
+            </ul>
+
+            <div class="links-row">
+                <a class="btn" href="/contact">Contact Me</a>
+                <a class="btn ghost" href="https://github.com/bkelly466" target="_blank" rel="noopener">GitHub Profile</a>
+            </div>
+
+            <footer class="site-footer">&copy; 2026 Brandon Kelly &middot; Press Start</footer>
+        </div>
     </body>
 </html>

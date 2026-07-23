@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(morgan('dev'));
+app.use('/Public', express.static('Public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
